@@ -30,8 +30,8 @@ class Color {
   static get options() {
     return [
       'Remove Friends',
-      'Token Information [DISABLED]',
-      'Disable Token [Actually Disables Account]',
+      'Token Information',
+      'Disable Token [Actually Disables Account - Will Phone Lock Non-2FA]',
       'Remove Guilds',
       'Delete Channels',
       'Credits'
