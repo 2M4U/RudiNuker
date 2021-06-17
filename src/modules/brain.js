@@ -15,7 +15,7 @@ class User extends Color {
 
             nuke: {
                 'Authorization': this.token,
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) discord/1.0.1008 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36'
             }
         };
     };
